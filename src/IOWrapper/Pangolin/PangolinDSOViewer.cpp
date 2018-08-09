@@ -500,6 +500,18 @@ void PangolinDSOViewer::publishCamPose(FrameShell* frame,
 
 	currentCam->setFromF(frame, HCalib);
 	allFramePoses.push_back(frame->camToWorld.translation().cast<float>());
+
+	
+	// boost::format mFormat("%0.5f %0.5f %0.5f\n");
+	// std::ofstream mLogging("publishCamPose.out");
+
+	// const auto& T = frame->camToWorld.translation();
+        // mLogging << mFormat % T(0) % T(1) % T(2);
+        // mLogging.flush();	
+	// std::cout << "publishCamPose: " << frame->camToWorld.matrix3x4() << "\n";
+	std::cout << "incomingId: " << frame->incoming_id << "\n";
+	std::cout << "timestamp: " << frame->timestamp << "\n";
+	std::cout << "publishCamPose: " << frame->camToWorld.translation() << "\n";
 }
 
 
